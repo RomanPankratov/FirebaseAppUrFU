@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.15.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.15.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand">FIREBASE-APP</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lk.html">Личный кабинет</a>
+            </li>
+            <li class="nav-item d-none" id="signOut">
+                <a class="nav-link" role="button" title="Выйти из профиля">Выйти</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container" id="content" style="margin-top: 15px;">
+      <div class="row">
+        <div class="col">
+          <h1 id="userMail"></h1>
+          <button class="btn btn-danger" type="button" id="deleteAccount" style="margin-bottom: 15px;">Удалить аккаунт</button>
+          <div class="document d-flex flex-column" style="margin-bottom: 15px;">
+            <label for="documentTitle">Заголовок</label>
+            <input type="text" id="documentTitle" class="document__title">
+            <label for="documentDate">Дата</label>
+            <input type="date" id="documentDate" class="document__date">
+            <label for="documentText">Текст</label>
+            <input type="text" id="documentText" class="document__text">
+            <label for="documentReference">Ссылка</label>
+            <input type="text" id="documentReference" class="document__reference">
+            <button id="createDocument" style="width:50%;">Создать документ</button>
+          </div>
+		</div>
+		<div class="col">
+			<h1>Загрузка файлов</h1>
+      <input type="file" id="fileButton" accept="image/png">
+		</div>
+      </div>
+    <div class="row">
+      <div class="col">
+        <div class="card-container"></div>
+      </div>
+      <div class="col">
+        <div class="file-container"></div>
+      </div>
+    </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Редактирование документа</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row d-flex justify-content-between">
+                    <label for="documentTitleEdit">Заголовок</label>
+                    <input type="text" id="documentTitleEdit" class="document__title">
+                  </div>
+                  <div class="row d-flex justify-content-between">
+                    <label for="documentDateEdit">Дата</label>
+                    <input type="date" id="documentDateEdit" class="document__date">
+                  </div>
+                  <div class="row d-flex justify-content-between">
+                    <label for="documentText">Текст</label>
+                    <input type="text" id="documentTextEdit" class="document__text">
+                  </div>
+                  <div class="row d-flex justify-content-between">
+                    <label for="documentReferenceEdit">Ссылка</label>
+                    <input type="text" id="documentReferenceEdit" class="document__reference">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary" id="editValues">Сохранить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="lk.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.15.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.15.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.15.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand">FIREBASE-APP</a>
+      <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="my-nav" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lk.html">Личный кабинет</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 style="margin-top: 15px;">Используйте форму для входа и регистрации</h1>
+      <div class="form col-4">
+        <div class="form-group">
+          <label for="emailInput">Электронная почта</label>
+          <input type="email" name="" id="emailInput" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">Пароль</label>
+          <input type="password" name="" id="passwordInput" class="form-control">
+        </div>
+      </div>
+      <button id="emailSignIn" class="btn btn-primary">Войти через email</button>
+      <button id="signUp" class="btn btn-info">Зарегистрироваться</button>
+      <button onclick="googleLogin()" class="btn btn-outline-warning">Войти через Google</button>
+      <h5 style="margin-top: 15px; color: gray;">Если переадресация не произошла, нажмите "Личный кабинет"</h5>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

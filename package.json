@@ -1,0 +1,27 @@
+{
+  "name": "firebase-app-urfu",
+  "version": "1.0.0",
+  "description": "the first firebase application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "firebase",
+    "js"
+  ],
+  "author": "Author <shishuknop@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.12.1",
+    "image-downloader": "^4.0.1",
+    "nodemon": "^2.0.4",
+    "pngjs": "^5.0.0",
+    "request": "^2.88.2"
+  }
+}
